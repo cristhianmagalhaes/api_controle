@@ -1,0 +1,1 @@
+alter table responsaveis add aluno_id bigint;
