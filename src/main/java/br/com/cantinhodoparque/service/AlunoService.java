@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import br.com.cantinhodoparque.dao.AlunoDao;
 import br.com.cantinhodoparque.dto.AlunoDTO;
+import br.com.cantinhodoparque.model.Turma;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 
@@ -30,6 +31,10 @@ public class AlunoService {
 			alunoDto.setTurma((String) tuple.get("turma"));
 			return alunoDto;
 		}).collect(Collectors.toList());
+	}
+
+	public void atuarlizar(Long id, String nome, Turma turma) {
+		alunoDao.atualizarAlunos(id, nome, turma);
 	}
 
 }

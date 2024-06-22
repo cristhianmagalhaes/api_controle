@@ -3,12 +3,14 @@ package br.com.cantinhodoparque.resource;
 import java.util.List;
 
 import br.com.cantinhodoparque.dto.AlunoDTO;
+import br.com.cantinhodoparque.model.Turma;
 import br.com.cantinhodoparque.service.AlunoService;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
@@ -40,6 +42,14 @@ public class AlunoResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<AlunoDTO> listarAluno() {
 		return alunoService.listar();
+	}
+	
+	@Path("/atualizar")
+	@PUT
+	@Produces(MediaType.APPLICATION_JSON)
+	@Transactional
+	public void atualizarAluno(@QueryParam("id") Long id, @QueryParam("nome") String nome, @QueryParam("turma") Turma turma) {
+		alunoService.atuarlizar(id, nome, turma);
 	}
 
 }
