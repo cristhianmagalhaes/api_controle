@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import br.com.cantinhodoparque.dao.AlunoDao;
-import br.com.cantinhodoparque.dto.AlunoDTO;
+import br.com.cantinhodoparque.dto.AlunoDto;
 import br.com.cantinhodoparque.model.Turma;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
@@ -23,9 +23,9 @@ public class AlunoService {
 		alunoDao.excluirAlunos(id);
 	}
 
-	public List<AlunoDTO> listar() {
+	public List<AlunoDto> listar() {
 		return alunoDao.listarAlunos().stream().map(tuple -> {
-			AlunoDTO alunoDto = new AlunoDTO();
+			AlunoDto alunoDto = new AlunoDto();
 			alunoDto.setId((Long) tuple.get("id"));
 			alunoDto.setNome((String) tuple.get("nome"));
 			alunoDto.setTurma((String) tuple.get("turma"));

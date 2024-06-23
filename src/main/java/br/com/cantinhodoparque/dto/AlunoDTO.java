@@ -1,6 +1,6 @@
 package br.com.cantinhodoparque.dto;
 
-public class AlunoDTO {
+public class AlunoDto{
 
 	private Long id;
 	private String nome;

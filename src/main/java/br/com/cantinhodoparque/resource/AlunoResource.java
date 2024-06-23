@@ -2,7 +2,7 @@ package br.com.cantinhodoparque.resource;
 
 import java.util.List;
 
-import br.com.cantinhodoparque.dto.AlunoDTO;
+import br.com.cantinhodoparque.dto.AlunoDto;
 import br.com.cantinhodoparque.model.Turma;
 import br.com.cantinhodoparque.service.AlunoService;
 import jakarta.inject.Inject;
@@ -40,7 +40,7 @@ public class AlunoResource {
 	@Path("/listar")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<AlunoDTO> listarAluno() {
+	public List<AlunoDto> listarAluno() {
 		return alunoService.listar();
 	}
 	
